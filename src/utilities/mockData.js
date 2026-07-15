@@ -1,60 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-
-/**
- *  Header
- * -Logo
- * -NAV Items
- * Body
- * -Search
- * -RestaurentContainer
- * -RestaurentCard
- * -> Img, Name of the restaurent, cuisine, Delivery time
- * Footer
- * -CopyRight
- * -Links
- * -Address
- * -Contact
- * 
- */
-
-const Header = () => {
-   return (<div className="header">
-      <div className="logo">
-        < img src ="https://th.bing.com/th/id/OIP.BqUXf4lsmlLwAQVf3Mw-7AHaHa?w=197&h=195&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"/>
-      </div>
-      <div className="nav-items">
-        <ul>
-         <li>Home</li>
-         <li>About Us</li>
-         <li>Contact Us</li>
-         <li>Cart</li>
-        </ul>
-      </div>
-   </div>);
-};
-
-const RestaurentCard = (props) => {
-   const {resData}= props;
-
-   const {cloudinaryImageId,name,cuisines,avgRating,costForTwo} = resData?.card.info;
-   return (
-      <div className="restaurentcard" style={{backgroundColor:"grey"}}>
-         <img 
-         className = "res-logo" 
-         alt ="res-logo" 
-         src ={"https://media-assets.swiggy.com/swiggy/image/upload/" + cloudinaryImageId}/>
-     <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{resData.card.info.sla.deliveryTime} minutes</h4>
-      </div>
-   );
-};
-
-
 const resList = [{
 				
 					"card": {
@@ -851,30 +794,5 @@ const resList = [{
             }
          ];
 
-const Body = () => {
-   return (
-   <div className="body">
-    <div className="search">Search</div>
-    <div className="restaurent-container">
-       {resList.map((restaurant) => (
-    <RestaurentCard
-     key={restaurant.card.info.id} resData={restaurant}
-    />
-  ))}
-    </div>
-    </div>
-   );
-};
 
-
-const AppLayout = () => {
-   return <div className="app">
-      <Header/>
-      <Body/>
-   </div>;
-};
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout/>);
+export default resList;

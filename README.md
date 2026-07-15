@@ -24,3 +24,37 @@ If you are developing a production application, we recommend using TypeScript wi
 -HMR = Hot Module Replacement
 -File Watching Algorithm - Written in C++
 -Caching - Faster buildes
+
+# Food Order
+/**
+ *  Header
+ * -Logo
+ * -NAV Items
+ * Body
+ * -Search
+ * -RestaurentContainer
+ * -RestaurentCard
+ * -> Img, Name of the restaurent, cuisine, Delivery time
+ * Footer
+ * -CopyRight
+ * -Links
+ * -Address
+ * -Contact
+ * 
+ */
+
+
+ /**
+
+ -  Two types of Export/Import
+
+ -default export/import
+
+ --> export default Component;
+ --> import Component from "path";
+
+ - Named export/import
+
+ --> export const Component/variable;
+ --> import {Component/variable} from "path";
+
